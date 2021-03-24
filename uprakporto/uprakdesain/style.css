@@ -1,0 +1,244 @@
+.body {
+    padding: 0;
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+.container {
+    width: 100%;
+    height: 580px;
+    background-image: url(../uprak/img/bg.png);
+    background-size: cover;
+}
+
+.navbar {
+    height: 60px;
+    box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    padding-left: 9%;
+    background-color: white;
+}
+
+.navbar p{
+    font-size: 25px;
+    font-family: 'Lobster', cursive;
+}
+
+.nav-link {
+    display: flex;
+    width: 300px;
+    justify-content: space-between;
+    position: absolute;
+    right: 9%;
+}
+
+.nav-link a{
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+
+.nav-link a:hover{
+    color: gray;
+}
+
+.text-bg {
+    position: absolute;
+    left: 10%;
+    top: 140px;
+    line-height: 0;
+}
+
+.text-bg p:first-child {
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+    line-height: 30px;
+    font-weight: bold;
+}
+
+.text-bg p:nth-child(2) {
+    font-family: 'Lobster', cursive;
+    font-size: 40px;
+    line-height: 20px;
+    margin: 0;
+}
+
+.text-bg p:nth-child(3) {
+    font-family: 'Roboto', sans-serif;
+    font-size: 25px;
+    line-height: normal;
+}
+
+.btn-here {
+    background-color: transparent;
+    border-radius: 10px;
+    width: 100px;
+    height: 30px;
+    border: 1px solid black;
+}
+
+.btn-download {
+    background-color: red;
+    color: white;
+    border-radius: 10px;
+    width: 100px;
+    height: 30px;
+    border: 1px solid black;
+}
+
+.model {
+    position: absolute;
+    top: 100px;
+    left: 47%;
+    height: 480px;
+}
+
+.card-about{
+    width: 80%;
+    box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    margin: -5% auto 10px;
+    background-color: white;
+    position: relative;
+    display: flex;
+    padding: 10px;
+    box-sizing: border-box;
+    padding-left: 30px;
+}
+
+.card-about img{
+    height: 240px;
+    margin: 30px;
+}
+
+.text-about {
+    margin: 30px;
+}
+
+.text-about p:first-child {
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.text-about p:nth-child(2)
+.text-about p:nth-child(3) {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+}
+
+.btn-here {
+    background-color: transparent;
+    border-radius: 10px;
+    width: 100px;
+    height: 30px;
+    border: 1px solid black;
+}
+
+.btn-download {
+    background-color: darkgrey;
+    color: white;
+    border-radius: 10px;
+    width: 100px;
+    height: 30px;
+    border: 1px solid black;
+}
+
+.text-skill{
+    padding: 35px;
+    margin-left: 150px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+}
+
+.text-skill p:first-child{
+    font-size: 25px;
+}
+
+.card-bawah {
+    display: flex;
+    margin: 95px;
+    justify-content: space-around;
+}
+
+.card {
+    width: 27%;
+    height: 200px;
+    background-color: rgb(40, 44, 52);
+    text-align: center;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    border-radius: 5px;
+}
+
+.card p:first-child {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.btn-more {
+    width: 60px;
+    height: 30px;
+    border-radius: 5px;
+    border: 1px solid rgb(40, 44, 52);
+    margin-top: 15px;
+}
+
+.footer {
+    width: 100%;
+    height: 230px;
+    background-color: rgb(40, 44, 52);
+}
+
+.text-footer{
+    text-align: center;
+    padding-top: 10px;
+}
+
+.text-footer p{
+    font-size: 35px;
+    font-family: 'Roboto', sans-serif;
+    color: white;
+    font-weight: bold;
+}
+
+.text-footer hr{
+    width: 30%;
+    border: 2px solid white;
+    border-radius: 2px;
+}
+
+.footer2{
+    background-color: white;
+    width: 100%;
+    height: 230px;
+}
+
+.text-footer2{
+    text-align: center;
+    padding-top: 10px;
+}
+
+.text-footer2 p:first-child{
+    font-size: 35px;
+    font-family: 'Roboto', sans-serif;
+    color: black;
+    font-weight: 900;
+}
+
+.text-footer2 p:nth-child(2){
+    color: black;
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+    font-size: 17px;
+}
+
+.btn-contact{
+    width: 100px;
+    height: 30px;
+    border-radius: 5px;
+    background-color: white;
+    margin-top: 15px;
+    border: 1px solid rgb(40, 44, 52);
+}
