@@ -1,6 +1,4 @@
-<?php 
-include "../koneksi.php"; 
-?>
+<?php include "../koneksi.php"; ?>
 <!DOCTYPE html>
 <html dir="ltr" lang="en">
 
@@ -8,13 +6,13 @@ include "../koneksi.php";
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <!-- Tell the browser to be responsive to screen width -->
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="keywords"
         content="wrappixel, admin dashboard, html css dashboard, web dashboard, bootstrap 5 admin, bootstrap 5, css3 dashboard, bootstrap 5 dashboard, Ample lite admin bootstrap 5 dashboard, frontend, responsive bootstrap 5 admin template, Ample admin lite dashboard bootstrap 5 dashboard template">
     <meta name="description"
         content="Ample Admin Lite is powerful and clean admin dashboard template, inpired from Bootstrap Framework">
     <meta name="robots" content="noindex,nofollow">
-    <title>Project</title>
+    <title>About</title>
     <link rel="canonical" href="https://www.wrappixel.com/templates/ample-admin-lite/" />
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="plugins/images/favicon.png">
@@ -23,12 +21,21 @@ include "../koneksi.php";
 </head>
 
 <body>
+    <!-- ============================================================== -->
+    <!-- Main wrapper - style you can find in pages.scss -->
+    <!-- ============================================================== -->
     <div id="main-wrapper" data-layout="vertical" data-navbarbg="skin5" data-sidebartype="full"
         data-sidebar-position="absolute" data-header-position="absolute" data-boxed-layout="full">
+        <!-- ============================================================== -->
+        <!-- Topbar header - style you can find in pages.scss -->
+        <!-- ============================================================== -->
         <header class="topbar" data-navbarbg="skin5">
             <nav class="navbar top-navbar navbar-expand-md navbar-dark">
                 <div class="navbar-header" data-logobg="skin6">
-                <a class="navbar-brand" href="../index.php">
+                    <!-- ============================================================== -->
+                    <!-- Logo -->
+                    <!-- ============================================================== -->
+                    <a class="navbar-brand" href="../index.php">
                         <!-- Logo icon -->
                         <b class="logo-icon text-center" style="margin-left: 70px;">
                             <img src="https://i.ibb.co/Mc9tpJq/tb1.png" alt="homepage"/>
@@ -37,6 +44,9 @@ include "../koneksi.php";
                     <a class="nav-toggler waves-effect waves-light text-dark d-block d-md-none"
                         href="javascript:void(0)"><i class="ti-menu ti-close"></i></a>
                 </div>
+                <!-- ============================================================== -->
+                <!-- End Logo -->
+                <!-- ============================================================== -->
                 <div class="navbar-collapse collapse" id="navbarSupportedContent" data-navbarbg="skin5">
                     <ul class="navbar-nav d-none d-md-block d-lg-none">
                         <li class="nav-item">
@@ -44,7 +54,14 @@ include "../koneksi.php";
                                 href="javascript:void(0)"><i class="ti-menu ti-close"></i></a>
                         </li>
                     </ul>
+                    <!-- ============================================================== -->
+                    <!-- Right side toggle and nav items -->
+                    <!-- ============================================================== -->
                     <ul class="navbar-nav ms-auto d-flex align-items-center">
+
+                        <!-- ============================================================== -->
+                        <!-- Search -->
+                        <!-- ============================================================== -->
                         <li class=" in">
                             <form role="search" class="app-search d-none d-md-block me-3">
                                 <input type="text" placeholder="Search..." class="form-control mt-0">
@@ -53,6 +70,9 @@ include "../koneksi.php";
                                 </a>
                             </form>
                         </li>
+                        <!-- ============================================================== -->
+                        <!-- User profile and search -->
+                        <!-- ============================================================== -->
                         <?php
                         $sql = "SELECT * FROM `tb_user` WHERE id";
                         $query = mysqli_query($connect, $sql);
@@ -61,11 +81,14 @@ include "../koneksi.php";
                         <li>
                             <a class="profile-pic" href="#">
                                 <img src="<?php echo $row["gambar"];?>" alt="user-img" width="36"
-                                    class="img-circle"><span class="text-white font-medium" style="text-transform: capitalize;"><?php echo $row["namalngkp"];?></span></a>
+                                    class="img-circle"><span class="text-white font-medium"><?php echo $row["namalngkp"];?></span></a>
                         </li>
                         <?php
                         }
                         ?>
+                        <!-- ============================================================== -->
+                        <!-- User profile and search -->
+                        <!-- ============================================================== -->
                     </ul>
                 </div>
             </nav>
@@ -124,126 +147,78 @@ include "../koneksi.php";
             <!-- End Sidebar scroll-->
         </aside>
         <div class="page-wrapper">
+            <!-- ============================================================== -->
+            <!-- Bread crumb and right sidebar toggle -->
+            <!-- ============================================================== -->
             <div class="page-breadcrumb bg-white">
                 <div class="row align-items-center">
                     <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
-                        <h4 class="page-title">Project List</h4>
+                        <h4 class="page-title">About page</h4>
                     </div>
                 </div>
                 <!-- /.col-lg-12 -->
             </div>
-
-            <section id="modal">
-            <div class="modal fade" id="tambahpro" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Tambah Data</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                <form action="./tambah_project.php?act=tambahpro" method="post">
-                <div class="container">
-                <div class="row row-cols-2">
-                    <div class="col">
-                    <div class="mb-3">
-                        <label for="exampleFormControlInput1" class="form-label">Judul:</label>
-                        <input type="text" name="judul" class="form-control" id="exampleFormControlInput1" placeholder="Masukan Judul">
-                    </div>
-                    </div>
-                    <div class="col">
-                    <div class="mb-3">
-                        <label for="exampleFormControlInput1" class="form-label">Gambar:</label>
-                        <input type="text" name="gambar" class="form-control" id="exampleFormControlInput1" placeholder="Masukan Link">
-                    </div>
-                    </div>
-                    </div>
-                    <div class="col">
-                    <div class="mb-3">
-                        <label for="exampleFormControlTextarea1" class="form-label">Deskripsi:</label>
-                        <textarea class="form-control" name="desk" id="exampleFormControlTextarea1" rows="3" placeholder="Masukan Deskripsi"></textarea>
-                    </div>
-                    </div>
-                    <div class="col">
-                    <div class="mb-3">
-                        <input type="hidden" class="form-control" value="<?php echo $row["id"];?>" name="id">
-                    </div>
-                    </div>
-                </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <input type="submit" name="simpan" class="btn btn-primary" value="Simpan">
-                </div>
-            </div>
-        </form>
-            </div>
-            </div>
-            </section>
-            <?php
-                if (isset($_GET['id'])) {
-                    $id = htmlspecialchars($_GET["id"]);
-                    date('d M y H:i');
-                    $sql = "DELETE FROM project WHERE id='$id'";
-                    $query = mysqli_query($connect, $sql);
-                    if ($query) {
-                        echo "<script type='text/javascript'>alert('Berhasil Dihapus!');</script>";
-                    }
-                    else{
-                        echo "<div class='alert alert-danger'> Data Gagal dihapus.</div>";
-                    }
-                }
-                ?>
-            <div class="container-fluid">
+            <div class="container-fluid" style="background-image: url(https://g.top4top.io/p_1916jzvhw1.jpg); background-position-y: -150px;">
+                <!-- ============================================================== -->
+                <!-- Start Page Content -->
+                <!-- ============================================================== -->
+                <!-- Row -->
                 <div class="row">
-                    <div class="col-sm-12">
+                    <!-- Column -->
+                    <div class="col-lg-4 col-xlg-3 col-md-12">
                         <div class="white-box">
-                            <a href="#"
-                                class="btn btn-primary text-white" data-bs-toggle="modal" data-bs-target="#tambahpro">
-                            Tambah Data</a>
-                            <div class="table-responsive">
-                                <table class="table text-nowrap text-center">
-                                    <thead>
-                                        <tr>
-                                            <th class="border-top-0">No</th>
-                                            <th class="border-top-0">Judul</th>
-                                            <th class="border-top-0" style="width: 30%;">Gambar</th>
-                                            <th class="border-top-0" style="width: 30%;">Deskripsi</th>
-                                            <th class="border-top-0">Last Update</th>
-                                            <th class="border-top-0">Actions</th>
-                                        </tr>
-                                    </thead>
-                                    <?php
-                                            $sql = "SELECT * FROM project";
-                                            $no = 1;
-                                            $query = mysqli_query($connect, $sql);
-                                            while($row = mysqli_fetch_array($query)){
-                                        ?>
-                                    <tbody>
-                                        <tr>
-                                            <td><?php echo $no++;?></td>
-                                            <td style="text-transform: capitalize;" style="width: 30%;"><?php echo $row["judul"];?></td>
-                                            <td><img src="<?php echo $row["gambar"];?>" style="width: 45%;"></td>
-                                            <td style="text-transform: capitalize;"><?php echo substr($row["deskripsi"], 0, 30). '...';?></td>
-                                            <td><?php echo date( "d M y H:i", strtotime($row["lastupdate"]));?></td>
-                                            <td>
-                                                <a href="edit_project.php?id=<?php echo $row['id']; ?>">
-                                                <span style="color: green; cursor: pointer;"><i class="fas fa-edit"></i></span>
-                                                </a>
-
-                                                <a href="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>?id=<?php echo $row['id']; ?>">
-                                                <span style="color: red;"><i class="fas fa-trash"></i></span>
-                                                </a>
-                                            </td>
-                                        </tr>
-                                    </tbody>
+                            <div class="user-bg">
+                                <div class="overlay-box">
+                                <?php
+                                    $sql = "SELECT * FROM `tb_user` WHERE id";
+                                    $query = mysqli_query($connect, $sql);
+                                    while($row = mysqli_fetch_array($query)){
+                                ?>
+                                    <div class="user-content">
+                                        <a href="javascript:void(0)"><img src="<?php echo $row["gambar"];?>"
+                                                class="thumb-lg img-circle" alt="img"></a>
+                                        <h4 class="text-white mt-2" style="text-transform: capitalize;"><?php echo $row["namalngkp"];?></h4>
+                                        <h5 class="text-white mt-2"><?php echo $row["emailadd"];?></h5>
+                                    </div>
                                     <?php
                                     }
                                     ?>
-                                </table>
+                                </div>
                             </div>
                         </div>
                     </div>
+                    <!-- Column -->
+                    <!-- Column -->
+                    <div class="col-lg-8 col-xlg-9 col-md-12">
+                        
+                        <div class="card">
+                            <div class="card-body">
+                            <?php
+                                        $sql = "SELECT * FROM about WHERE id";
+                                        $query = mysqli_query($connect, $sql);
+                                        $row = mysqli_fetch_assoc($query);
+                            ?>
+                                <form class="form-horizontal form-material" action="simpan3.php" method="POST">
+                                    <div class="form-group mb-4">
+                                        <div class="col-md-12 border-bottom p-0">
+                                            <input type="hidden" class="form-control p-0 border-0" name="id" value="<?php echo $row["id"];?>"> </div>
+                                    </div>
+                                    <div class="form-group mb-4">
+                                        <label class="col-md-12 p-0">Deskripsi:</label>
+                                        <div class="col-md-12 border-bottom p-0">
+                                            <textarea class="form-control" name="desk" placeholder="Masukan Deskripsi" rows="3"><?php echo $row["deskripsi"];?></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="form-group mb-2">
+                                        <div class="col-sm-12">
+                                            <input type="submit" name="simpan" class="btn btn-primary" value="Update">
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Column -->
                 </div>
             </div>
             <footer class="footer text-center"> 2021 © Angkasa Raya | Portofolio

@@ -1,4 +1,10 @@
-<?php include "../koneksi.php"; ?>
+<?php 
+include "../koneksi.php";
+?> 
+<?php 
+include "time.php"; 
+date_default_timezone_set('Asia/Jakarta');
+?>
 <!DOCTYPE html>
 <html dir="ltr" lang="en">
 
@@ -29,18 +35,11 @@
         <header class="topbar" data-navbarbg="skin5">
             <nav class="navbar top-navbar navbar-expand-md navbar-dark">
                 <div class="navbar-header" data-logobg="skin6">
-                    <a class="navbar-brand" href="#">
+                    <a class="navbar-brand" href="../index.php">
                         <!-- Logo icon -->
-                        <b class="logo-icon">
-                            <!-- Dark Logo icon -->
-                            <img src="https://i.ibb.co/Mc9tpJq/tb1.png" alt="homepage" />
+                        <b class="logo-icon text-center" style="margin-left: 70px;">
+                            <img src="https://i.ibb.co/Mc9tpJq/tb1.png" alt="homepage"/>
                         </b>
-                        <!--End Logo icon -->
-                        <!-- Logo text -->
-                        <span class="logo-text">
-                            <!-- dark Logo text -->
-                            <img src="https://d.top4top.io/p_1915p6u5s1.jpg" width="140" alt="homepage" />
-                        </span>
                     </a>
                     <a class="nav-toggler waves-effect waves-light text-dark d-block d-md-none"
                         href="javascript:void(0)"><i class="ti-menu ti-close"></i></a>
@@ -63,7 +62,7 @@
                         <li>
                             <a class="profile-pic" href="#">
                                 <img src="<?php echo $row["gambar"];?>" alt="user-img" width="36"
-                                    class="img-circle"><span class="text-white font-medium"><?php echo $row["namalngkp"];?></span></a>
+                                    class="img-circle"><span class="text-white font-medium" style="text-transform: capitalize;"><?php echo $row["namalngkp"];?></span></a>
                         </li>
                         <?php
                         }
@@ -82,7 +81,7 @@
                         <li class="sidebar-item pt-2">
                             <a class="sidebar-link waves-effect waves-dark sidebar-link" href="./index.php"
                                 aria-expanded="false">
-                                <i class="far fa-clock" aria-hidden="true"></i>
+                                <i class="fas fa-home" aria-hidden="true"></i>
                                 <span class="hide-menu">Dashboard</span>
                             </a>
                         </li>
@@ -98,6 +97,20 @@
                                 aria-expanded="false">
                                 <i class="fa fa-table" aria-hidden="true"></i>
                                 <span class="hide-menu">Project</span>
+                            </a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="./about.php"
+                                aria-expanded="false">
+                                <i class="fa fa-info-circle" aria-hidden="true"></i>
+                                <span class="hide-menu">About</span>
+                            </a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="service.php"
+                                aria-expanded="false">
+                                <i class="fa fa-wrench" aria-hidden="true"></i>
+                                <span class="hide-menu">Service</span>
                             </a>
                         </li>
                         <li class="text-center p-20 upgrade-btn">
@@ -129,20 +142,18 @@
                             </div>
                             <div class="comment-widgets">
                             <?php
-                                    $sql = "SELECT * FROM tb_user ORDER BY lastupdate ASC";
+                                    $sql = "SELECT * FROM tb_user";
                                     $query = mysqli_query($connect, $sql);
                                     $row = mysqli_fetch_assoc($query);
                             ?>
                                 <div class="d-flex flex-row comment-row p-3 mt-0">
                                     <div class="p-2"><img src="<?php echo $row["gambar"];?>" alt="user" width="95" height="95" class="rounded-circle"></div>
                                     <div class="comment-text ps-2 ps-md-3 w-100">
-                                        <h5 class="font-medium"><?php echo $row["namalngkp"];?></h5>
+                                        <h5 class="font-medium" style="text-transform: capitalize;"><?php echo $row["namalngkp"];?></h5>
                                         <p><?php echo $row["emailadd"];?></p>
-                                        <span class="mb-3 d-block">"<?php echo $row["quotes"];?>"</span>
+                                        <span class="mb-3 d-block">❝ <?php echo $row["quotes"];?> ❞</span>
                                         <div class="comment-footer d-md-flex align-items-center">
-                                            <span class="badge bg-primary rounded"><?php echo $row["status"];?></span>
-                                            
-                                            <div class="text-muted fs-2 ms-auto mt-2 mt-md-0">Last Update: <?php echo $row["lastupdate"];?></div>
+                                            <div class="text-muted fs-2 ms-auto mt-2 mt-md-0">Last Update: <?php echo time_since(strtotime('2021-03-31 12:47:25')); ?></div>
                                         </div>
                                     </div>
                                 </div>
@@ -155,7 +166,7 @@
                                 <h3 class="box-title mb-0">Chat Listing</h3>
                             </div>
                             <?php
-                                    $sql = "SELECT * FROM tb_user ORDER BY lastupdate ASC";
+                                    $sql = "SELECT * FROM tb_user";
                                     $query = mysqli_query($connect, $sql);
                                     $row = mysqli_fetch_assoc($query); {
                             ?>
@@ -173,8 +184,8 @@
                                         <a href="javascript:void(0)" class="d-flex align-items-center"><img
                                                 src="<?php echo $row["gambar"];?>" alt="user-img" class="img-circle">
                                             <div class="ms-2">
-                                                <span class="text-dark"><?php echo $row["namalngkp"];?> <small
-                                                        class="d-block text-success d-block">online</small></span>
+                                                <span class="text-dark" style="text-transform: capitalize;"><?php echo $row["namalngkp"];?> <small
+                                                        class="d-block text-success d-block"><?php echo $row["status"];?></small></span>
                                             </div>
                                         </a>
                                     </li>

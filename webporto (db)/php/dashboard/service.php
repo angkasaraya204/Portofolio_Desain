@@ -14,7 +14,7 @@ include "../koneksi.php";
     <meta name="description"
         content="Ample Admin Lite is powerful and clean admin dashboard template, inpired from Bootstrap Framework">
     <meta name="robots" content="noindex,nofollow">
-    <title>Project</title>
+    <title>Service</title>
     <link rel="canonical" href="https://www.wrappixel.com/templates/ample-admin-lite/" />
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="plugins/images/favicon.png">
@@ -133,53 +133,6 @@ include "../koneksi.php";
                 <!-- /.col-lg-12 -->
             </div>
 
-            <section id="modal">
-            <div class="modal fade" id="tambahpro" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Tambah Data</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                <form action="./tambah_project.php?act=tambahpro" method="post">
-                <div class="container">
-                <div class="row row-cols-2">
-                    <div class="col">
-                    <div class="mb-3">
-                        <label for="exampleFormControlInput1" class="form-label">Judul:</label>
-                        <input type="text" name="judul" class="form-control" id="exampleFormControlInput1" placeholder="Masukan Judul">
-                    </div>
-                    </div>
-                    <div class="col">
-                    <div class="mb-3">
-                        <label for="exampleFormControlInput1" class="form-label">Gambar:</label>
-                        <input type="text" name="gambar" class="form-control" id="exampleFormControlInput1" placeholder="Masukan Link">
-                    </div>
-                    </div>
-                    </div>
-                    <div class="col">
-                    <div class="mb-3">
-                        <label for="exampleFormControlTextarea1" class="form-label">Deskripsi:</label>
-                        <textarea class="form-control" name="desk" id="exampleFormControlTextarea1" rows="3" placeholder="Masukan Deskripsi"></textarea>
-                    </div>
-                    </div>
-                    <div class="col">
-                    <div class="mb-3">
-                        <input type="hidden" class="form-control" value="<?php echo $row["id"];?>" name="id">
-                    </div>
-                    </div>
-                </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <input type="submit" name="simpan" class="btn btn-primary" value="Simpan">
-                </div>
-            </div>
-        </form>
-            </div>
-            </div>
-            </section>
             <?php
                 if (isset($_GET['id'])) {
                     $id = htmlspecialchars($_GET["id"]);
@@ -198,9 +151,6 @@ include "../koneksi.php";
                 <div class="row">
                     <div class="col-sm-12">
                         <div class="white-box">
-                            <a href="#"
-                                class="btn btn-primary text-white" data-bs-toggle="modal" data-bs-target="#tambahpro">
-                            Tambah Data</a>
                             <div class="table-responsive">
                                 <table class="table text-nowrap text-center">
                                     <thead>
@@ -214,7 +164,7 @@ include "../koneksi.php";
                                         </tr>
                                     </thead>
                                     <?php
-                                            $sql = "SELECT * FROM project";
+                                            $sql = "SELECT * FROM `service`";
                                             $no = 1;
                                             $query = mysqli_query($connect, $sql);
                                             while($row = mysqli_fetch_array($query)){
@@ -223,16 +173,12 @@ include "../koneksi.php";
                                         <tr>
                                             <td><?php echo $no++;?></td>
                                             <td style="text-transform: capitalize;" style="width: 30%;"><?php echo $row["judul"];?></td>
-                                            <td><img src="<?php echo $row["gambar"];?>" style="width: 45%;"></td>
+                                            <td><img src="<?php echo $row["gambar"];?>" style="width: 40%;"></td>
                                             <td style="text-transform: capitalize;"><?php echo substr($row["deskripsi"], 0, 30). '...';?></td>
                                             <td><?php echo date( "d M y H:i", strtotime($row["lastupdate"]));?></td>
                                             <td>
-                                                <a href="edit_project.php?id=<?php echo $row['id']; ?>">
+                                                <a href="edit_service.php?id=<?php echo $row['id']; ?>">
                                                 <span style="color: green; cursor: pointer;"><i class="fas fa-edit"></i></span>
-                                                </a>
-
-                                                <a href="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>?id=<?php echo $row['id']; ?>">
-                                                <span style="color: red;"><i class="fas fa-trash"></i></span>
                                                 </a>
                                             </td>
                                         </tr>

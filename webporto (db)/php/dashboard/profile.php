@@ -26,18 +26,11 @@
         <header class="topbar" data-navbarbg="skin5">
             <nav class="navbar top-navbar navbar-expand-md navbar-dark">
                 <div class="navbar-header" data-logobg="skin6">
-                    <a class="navbar-brand" href="dashboard.html">
+                <a class="navbar-brand" href="../index.php">
                         <!-- Logo icon -->
-                        <b class="logo-icon">
-                            <!-- Dark Logo icon -->
-                            <img src="https://i.ibb.co/Mc9tpJq/tb1.png" alt="homepage" />
+                        <b class="logo-icon text-center" style="margin-left: 70px;">
+                            <img src="https://i.ibb.co/Mc9tpJq/tb1.png" alt="homepage"/>
                         </b>
-                        <!--End Logo icon -->
-                        <!-- Logo text -->
-                        <span class="logo-text">
-                            <!-- dark Logo text -->
-                            <img src="https://d.top4top.io/p_1915p6u5s1.jpg" width="140" alt="homepage" />
-                        </span>
                     </a>
                     <a class="nav-toggler waves-effect waves-light text-dark d-block d-md-none"
                         href="javascript:void(0)"><i class="ti-menu ti-close"></i></a>
@@ -66,7 +59,7 @@
                         <li>
                             <a class="profile-pic" href="#">
                                 <img src="<?php echo $row["gambar"];?>" alt="user-img" width="36"
-                                    class="img-circle"><span class="text-white font-medium"><?php echo $row["namalngkp"];?></span></a>
+                                    class="img-circle"><span class="text-white font-medium" style="text-transform: capitalize;"><?php echo $row["namalngkp"];?></span></a>
                         </li>
                         <?php
                         }
@@ -85,7 +78,7 @@
                         <li class="sidebar-item pt-2">
                             <a class="sidebar-link waves-effect waves-dark sidebar-link" href="./index.php"
                                 aria-expanded="false">
-                                <i class="far fa-clock" aria-hidden="true"></i>
+                                <i class="fas fa-home" aria-hidden="true"></i>
                                 <span class="hide-menu">Dashboard</span>
                             </a>
                         </li>
@@ -101,6 +94,20 @@
                                 aria-expanded="false">
                                 <i class="fa fa-table" aria-hidden="true"></i>
                                 <span class="hide-menu">Project</span>
+                            </a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="./about.php"
+                                aria-expanded="false">
+                                <i class="fa fa-info-circle" aria-hidden="true"></i>
+                                <span class="hide-menu">About</span>
+                            </a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="service.php"
+                                aria-expanded="false">
+                                <i class="fa fa-wrench" aria-hidden="true"></i>
+                                <span class="hide-menu">Service</span>
                             </a>
                         </li>
                         <li class="text-center p-20 upgrade-btn">
@@ -129,7 +136,7 @@
                     <!-- Column -->
                     <div class="col-lg-4 col-xlg-3 col-md-12">
                         <div class="white-box">
-                            <div class="user-bg"> <img width="100%" alt="user" src="plugins/images/large/img1.jpg">
+                            <div class="user-bg">
                                 <div class="overlay-box">
                                 <?php
                                     $sql = "SELECT * FROM `tb_user` WHERE id";
@@ -139,7 +146,7 @@
                                     <div class="user-content">
                                         <a href="javascript:void(0)"><img src="<?php echo $row["gambar"];?>"
                                                 class="thumb-lg img-circle" alt="img"></a>
-                                        <h4 class="text-white mt-2"><?php echo $row["namalngkp"];?></h4>
+                                        <h4 class="text-white mt-2" style="text-transform: capitalize;"><?php echo $row["namalngkp"];?></h4>
                                         <h5 class="text-white mt-2"><?php echo $row["emailadd"];?></h5>
                                     </div>
                                     <?php
@@ -156,7 +163,7 @@
                         <div class="card">
                             <div class="card-body">
                             <?php
-                                    $sql = "SELECT * FROM tb_user";
+                                    $sql = "SELECT * FROM tb_user WHERE id";
                                     $query = mysqli_query($connect, $sql);
                                     $row = mysqli_fetch_assoc($query);
                             ?>
